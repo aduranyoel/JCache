@@ -1,25 +1,25 @@
-package uy.gub.fgn.sippau2.common.utils.cache;
+package yt.example.cache;
 
 import java.time.LocalDateTime;
 
-class SippauCacheBody<T> {
+class JCacheBody<T> {
 
     private static final long DEFAULT_REFRESH = 3600;
 
     private long refresh;
     private LocalDateTime loadTime;
     private T data;
-    private SippauCacheAction<T> action;
+    private JCacheAction<T> action;
 
-    public SippauCacheBody() {
+    public JCacheBody() {
     }
 
-    public SippauCacheBody(SippauCacheAction<T> action) {
+    public JCacheBody(JCacheAction<T> action) {
         setRefresh(DEFAULT_REFRESH);
         setAction(action);
     }
 
-    public SippauCacheBody(long refresh, SippauCacheAction<T> action) {
+    public JCacheBody(long refresh, JCacheAction<T> action) {
         setRefresh(refresh);
         setAction(action);
     }
@@ -41,11 +41,11 @@ class SippauCacheBody<T> {
         this.setLoadTime(LocalDateTime.now());
     }
 
-    public SippauCacheAction<T> getAction() {
+    public JCacheAction<T> getAction() {
         return action;
     }
 
-    public void setAction(SippauCacheAction<T> action) {
+    public void setAction(JCacheAction<T> action) {
         this.action = action;
     }
 
